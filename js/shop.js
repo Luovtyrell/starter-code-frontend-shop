@@ -20,10 +20,8 @@ function buy(id) {
     console.table(cart)
 }
 
-// Exercise 2
-function cleanCart() {
-
-}
+//--CLEAN CART FUNCTION---
+const cleanCart = () => cart.splice(0, cart.length)
 
 // Exercise 3
 function calculateTotal() {
