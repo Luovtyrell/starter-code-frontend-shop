@@ -1,10 +1,23 @@
 var cart = [];
 var total = 0;
 
-// Exercise 1
+//---BUY FUNCTION:---
+//1) Buscamos por ID .find
+//2) Sí esta => posicion array (find.index)
+//3) Està? incrementamos al carret ( quantity ++ ) : agregamos cantidad 1
+//4) No esta de cap manera? 'Error!'
 function buy(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cart array
+    const productFound = products.find((product) => product.id === id)
+    const productInCart = cart.findIndex((product) => product.id === id)
+    if (productInCart !== -1) {
+        cart[productInCart].quantity++
+    } else if (productFound) {
+        productFound.quantity = 1
+        cart.push(productFound)
+    } else {
+        alert('product not found!')
+    }
+    console.table(cart)
 }
 
 // Exercise 2
