@@ -18,14 +18,25 @@ function buy(id) {
         alert('product not found!')
     }
     console.table(cart)
+    calculateTotal()
 }
 
 //--CLEAN CART FUNCTION---
 const cleanCart = () => cart.splice(0, cart.length)
 
-// Exercise 3
+//---CALCULATE TOTAL---
+//1) Iniciamos total a 0 para el bucle
+//2) Precio * Cantidad de un producto = subtotal
+//3) cantidad total = subtotal + total cesta (redondeamos decimales .toFixed)
+//4) Llamamos la funcion al botón buy
 function calculateTotal() {
-    // Calculate total price of the cart using the "cartList" array
+    let total = 0
+    for (let i = 0; i < cart.length; i++) {
+        let subtotal = cart[i].price * cart[i].quantity
+        total += subtotal
+        total = total.toFixed(2)
+    }
+    console.log(total)
 }
 
 // Exercise 4
