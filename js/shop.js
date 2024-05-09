@@ -18,6 +18,7 @@ function buy(id) {
         alert('product not found!')
     }
     console.table(cart)
+    applyPromotionsCart()
     calculateTotal()
 }
 
@@ -34,14 +35,27 @@ function calculateTotal() {
     for (let i = 0; i < cart.length; i++) {
         let subtotal = cart[i].price * cart[i].quantity
         total += subtotal
-        total = total.toFixed(2)
+        total = total
     }
-    console.log(total)
+    console.log('Total:', total)
 }
 
-// Exercise 4
+//---SPECIAL OFFERS---
+//1) Calculamos subtotal
+//1) id.product tiene descuentos? guardamos precio total descontado en subtotalWithDiscount : no se guarda
+//2) Iteramos cada elemento del array con .forEach porque es a cada producto
 function applyPromotionsCart() {
-    // Apply promotions to each item in the array "cart"
+    let totalWithDiscount = 0
+    cart.forEach((product) => {
+        let subtotal = product.price * product.quantity
+        if (product.id === 1 && product.quantity >= 3) {
+            subtotal *= 0.8
+        } else if (product.id === 3 && product.quantity >= 10) {
+            subtotal *= 0.7
+        }
+        totalWithDiscount += subtotal
+    })
+    console.log('Total discount:', totalWithDiscount)
 }
 
 // Exercise 5
