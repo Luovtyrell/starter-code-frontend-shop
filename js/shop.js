@@ -20,10 +20,14 @@ function buy(id) {
     console.table(cart)
     applyPromotionsCart()
     calculateTotal()
+    printCart()
 }
 
 //--CLEAN CART FUNCTION---
-const cleanCart = () => cart.splice(0, cart.length)
+const cleanCart = () => {
+    cart.splice(0, cart.length)
+    printCart()
+}
 
 //---CALCULATE TOTAL---
 //1) Iniciamos total a 0 para el bucle
@@ -38,6 +42,7 @@ function calculateTotal() {
         total = total
     }
     console.log('Total:', total)
+    return total
 }
 
 //---SPECIAL OFFERS---
@@ -53,14 +58,39 @@ function applyPromotionsCart() {
         } else if (product.id === 3 && product.quantity >= 10) {
             subtotal *= 0.7
         }
+        product.subtotalWithDiscount = subtotal
         totalWithDiscount += subtotal
     })
     console.log('Total discount:', totalWithDiscount)
+    return totalWithDiscount
 }
 
-// Exercise 5
+//--PRINT CART---
+//1) Añadimos fila de subtotal y subtotal con descuento en HTML
+//1) Llamamos y almacenamos funciones, preparamos variables + getElements...
+//2) limpiamos contenido carrito con print.innerHTML = ''
+//3) forEach para iterar sobre cada elemento del carrito y mostramos toda la info desglosada al maximo añadiendo la columna subtotal sin descuento y total sin descuento que se ha modificado en el HTML
 function printCart() {
-    // Fill the shopping cart modal manipulating the shopping cart dom
+    let totalWithDiscount = applyPromotionsCart()
+    let totalFinalPrice = calculateTotal()
+    let print = document.getElementById('cart_list')
+    let totalPrice = document.getElementById('total_price')
+    let totalPriceWithDiscount = document.getElementById('total_price_with_discount')
+    print.innerHTML = ''
+
+    cart.forEach(product => {
+        let subtotal = product.price * product.quantity;
+        print.innerHTML +=
+            `<tr>
+                <td>${product.id}</td>
+                <td>$${product.price.toFixed(2)}</td>
+                <td>${product.quantity}</td>
+                <td>$${subtotal.toFixed(2)}</td>
+                <td>$${product.subtotalWithDiscount.toFixed(2)}</td>
+            </tr>`
+    })
+    totalPrice.innerHTML = `${totalFinalPrice.toFixed(2)}`
+    totalPriceWithDiscount.innerHTML = `${totalWithDiscount.toFixed(2)}`
 }
 
 
