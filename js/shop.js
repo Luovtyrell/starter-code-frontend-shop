@@ -87,18 +87,36 @@ function printCart() {
                 <td>${product.quantity}</td>
                 <td>$${subtotal.toFixed(2)}</td>
                 <td>$${product.subtotalWithDiscount.toFixed(2)}</td>
+                <td><button onclick="removeFromCart(${product.id})" class="btn btn-danger">-</button></td>
             </tr>`
     })
     totalPrice.innerHTML = `${totalFinalPrice.toFixed(2)}`
     totalPriceWithDiscount.innerHTML = `${totalWithDiscount.toFixed(2)}`
 }
 
-
-// ** Nivell II **
-
-// Exercise 7
+//---REMOVE FROM CART---
+//1) Agregamos boton de boostrap danger '-' en printCart()
+//2) buscamos findIndex en carro
+//3) trobat? quantity-- : 'error'
+//4) quantity === 0 eliminamos producto .splice
+//5) Llamamos promociones y total y imprimimos carro
 function removeFromCart(id) {
+    const indexCart = cart.findIndex(product => product.id === id)
 
+    if (indexCart !== -1) {
+        cart[indexCart].quantity--
+
+        if (cart[indexCart].quantity === 0) {
+            cart.splice(indexCart, 1)
+        }
+
+    } else {
+        console.error("Error")
+    }
+
+    applyPromotionsCart()
+    calculateTotal()
+    printCart()
 }
 
 function open_modal() {
