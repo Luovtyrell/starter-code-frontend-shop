@@ -1,4 +1,12 @@
-# Sprint 2 IT Academy | Shop
+# E-commerce Web Application Starter Code
+
+## Description
+This repository contains the solution to the exercise of the second sprint of IT Academy, which involves developing a web application for a company in the e-commerce sector.
+
+## Objectives
+- Apply JavaScript concepts in practice.
+- Learn to manipulate a dataset.
+- Divide our code into functions and know how to reuse them.
 
 ## Introduction
 
@@ -6,67 +14,33 @@ A company in the e-commerce sector has asked us for a web application that allow
 
 You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 2 weeks to finish, which is how long this sprint lasts.
 
-<br>
+## Prerequisites
+- Node.js and npm installed on your system.
 
-## Requirements
+## Exercises
+1. **Function cleanCart()**
+2. **Calculate the total**
+3. **Promotions**
+4. **CartModal (printCart())**
+5. **Checkout Form**
+6. **Function removeFromCart()**
+7. **Layout Design**
 
+## Usage Instructions
+1. Run the project using a local server or open the `index.html` file in your web browser.
+2. Explore the application.
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-```
+## Images
+<div style="display: flex; justify.content: center; max-width: 1000px; margin:auto;">
+    <img src="./images/Captura de pantalla 2024-05-11 a las 13.23.53.pngf" alt="e-commerce layout img"/>
+    <img src="./images/Captura de pantalla 2024-05-11 a las 13.23.59.png" alt="e-commerce layout img">
+    <img src="./images/Captura de pantalla 2024-05-11 a las 13.24.04.png" alt="e-commerce layout img"/>
+    <img src="./images/Captura de pantalla 2024-05-11 a las 13.24.27.png" alt="e-commerce layout img"/>
+    <img src="./images/Captura de pantalla 2024-05-11 a las 13.24.53.png" alt="e-commerce layout img"/>
+</div>
 
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
+## Author
+- **Lucía Mª Ordoñez Vilanova** - _React, It Academy_.
 
-```bash
-$ git remote rm origin
-```
-
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
-
-```bash
-$ git remote add origin <your repo name!>
-```
-
-<br>
-
-## Submission
-
-1. Upon completion, run the following commands:
-
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
-
-2. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
-
-
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-
-## Instructions
-
-You have the following indications from the frontend manager:
-
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.
+## License
+This project is based on the starter code provided by [starter-code-frontend-shop](https://github.com/IT-Academy-BCN/starter-code-frontend-shop), which is part of the IT Academy curriculum.
