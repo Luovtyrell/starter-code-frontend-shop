@@ -7,6 +7,7 @@ var total = 0;
 //3) Està? incrementamos al carret ( quantity ++ ) : agregamos cantidad 1
 //4) No esta de cap manera? 'Error!'
 function buy(id) {
+    countCart()
     const productFound = products.find((product) => product.id === id)
     const productInCart = cart.findIndex((product) => product.id === id)
     if (productInCart !== -1) {
@@ -92,6 +93,7 @@ function printCart() {
     })
     totalPrice.innerHTML = `${totalFinalPrice.toFixed(2)}`
     totalPriceWithDiscount.innerHTML = `${totalWithDiscount.toFixed(2)}`
+    countCart()
 }
 
 //---REMOVE FROM CART---
@@ -121,4 +123,13 @@ function removeFromCart(id) {
 
 function open_modal() {
     printCart();
+}
+
+function countCart() {
+    let contadorCart = document.getElementById("count_product")
+    let totalQuantity = 0
+    for (let i = 0; i < cart.length; i++) {
+        totalQuantity += cart[i].quantity
+    }
+    contadorCart.innerHTML = totalQuantity
 }
