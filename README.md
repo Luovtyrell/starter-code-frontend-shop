@@ -32,7 +32,7 @@ You will be in charge of setting up an initial demo version of the application f
 
 ## Images
 <div style="display: flex; justify.content: center; max-width: 1000px; margin:auto;">
-    <img src="./images/Captura de pantalla 2024-05-11 a las 13.23.53.pngf" alt="e-commerce layout img"/>
+    <img src="./images/Captura de pantalla 2024-05-11 a las 13.23.53.png" alt="e-commerce layout img"/>
     <img src="./images/Captura de pantalla 2024-05-11 a las 13.23.59.png" alt="e-commerce layout img">
     <img src="./images/Captura de pantalla 2024-05-11 a las 13.24.04.png" alt="e-commerce layout img"/>
     <img src="./images/Captura de pantalla 2024-05-11 a las 13.24.27.png" alt="e-commerce layout img"/>
